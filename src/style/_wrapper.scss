@@ -1,0 +1,219 @@
+.wrapper {
+margin-top: 60px;
+padding: 50px 60px;
+background-color: #fff;
+border-radius: 10px;
+@media(max-width: 998px){
+    padding: 30px 40px;
+}
+@media(max-width: 768px){
+    padding:  20px;
+    margin-top: 40px;
+}
+    &__post {
+        img{
+            max-width: 100%;
+        }
+    }
+
+    &__comments {
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+        gap: 48px;
+        @media(max-width: 768px){
+margin-top: 14px;
+gap: 24px;
+        }
+    }
+
+}
+.actions{
+    display: flex;
+    padding: 16px 0;
+    gap: 20px;
+    div{
+        display: flex;
+        align-items: center;
+        gap:8px;
+    }
+   
+}
+.author {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    @media(max-width: 768px){
+margin-bottom: 10px;
+    }
+    &__avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #ccc;
+        margin-right: 14px;
+        @media(max-width: 998px){
+            width: 40px;
+            height: 40px;
+        }
+        @media(max-width: 768px){
+            width: 30px;
+            height: 30px;
+        }
+    }
+    &__name {
+        font-size: 16px;
+        color: #00BFFF;
+    }
+}
+
+.form{
+    border: 1px solid $blue;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+        gap: 16px;
+    input{
+        background-color: #f1f1f1;
+        padding: 6px 10px;
+        border-radius: 4px;
+        border: 1px solid #f1f1f1;
+        &.err{
+        border-color: #d32020;
+
+        }
+    }
+
+    &__row{
+        display: flex;
+        border-top: 1px solid #dcdcdc;
+        padding-top: 20px;
+        @media(max-width: 449px){
+            flex-direction: column;
+        }
+    }
+    &__btn {
+        background-color: $blue;
+        color: #fff;
+        font-size: 18px;
+        padding: 0 18px;
+        height: 33px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        margin-left: 20px;
+        @media(max-width: 449px){
+            margin: 10px 0 0 0;
+        }
+    }
+
+}
+
+.comment +  .comment {
+    // margin-top: 24px;
+    position: relative;
+  &::before{
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #f1f1f1;
+    position: absolute;
+    top: -24px;
+left: 0;
+@media(max-width: 768px){
+top: -12px;
+}
+  }
+}
+.comment {  
+padding: 20px;
+transition: box-shadow 0.2s;
+@media(max-width: 768px){
+    padding: 10px;
+}
+&:hover{
+    box-shadow: 0px 0px 8px -3px rgba(34, 60, 80, 0.2);
+}
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 14px;
+    }
+
+
+    &__author {
+        color: $blue;
+       display: flex;
+       align-items: center;
+       gap: 10px;
+    }
+    &__img{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        overflow: hidden;
+        img{
+          max-width: 100%;
+          object-fit: cover;
+        } 
+    }
+    
+    &__delete {
+        button{
+            width: 14px;
+        height: 14px;
+        svg{
+            pointer-events: none;
+        }
+        i{
+            width: 14px;
+            height: 14px;
+        }
+    }
+    }
+
+    &__like{
+      
+        svg{
+            pointer-events: none;
+            fill: #999999;
+            &.red{
+                fill: #d32020;
+            }
+        }
+    }
+
+    &__text {
+        line-height: 1.4;
+        color: #333333;
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        color: #999999;
+        margin-top: 14px;
+        @media(max-width: 449px){
+            gap: 8px;
+            font-size: 11px;
+        }
+    }
+    &__share{
+        padding: 0 14px;
+        border-left: 1px solid #999999;
+        border-right: 1px solid #999999;
+        transition: color 0.2s;
+        @media(max-width: 449px){
+          padding: 0 8px;
+          font-size: 12px;
+        }
+        &:hover{
+            color: #787878;
+        }
+    }
+}
+
